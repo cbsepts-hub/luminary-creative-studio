@@ -1,0 +1,94 @@
+/* ==========================
+   LUMINARY EXPERIENCE ENGINE
+   Main Cinematic Styles
+   ========================== */
+
+
+/* Full-screen opening experience */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+
+/* Intro content */
+
+.intro-content {
+    text-align: center;
+    color: white;
+    max-width: 700px;
+    padding: 40px;
+}
+
+
+.intro-content h1 {
+    font-size: 64px;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+
+.intro-content p {
+    font-size: 20px;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+
+/* Enter button */
+
+#enterBtn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 16px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+#enterBtn:hover {
+    transform: scale(1.05);
+}
+
+
+/* Floating sound control */
+
+#soundToggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+/* Mobile adjustments */
+
+@media (max-width: 768px) {
+
+    .intro-content h1 {
+        font-size: 42px;
+    }
+
+    .intro-content p {
+        font-size: 16px;
+    }
+
+}
