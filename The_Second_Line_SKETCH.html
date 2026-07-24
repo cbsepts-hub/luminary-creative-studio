@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="assets/css/luminary.css">
 <meta charset="UTF-8">
 <title>The Second Line — Sketch</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -199,6 +200,13 @@
 </style>
 </head>
 <body>
+  <div id="intro">
+    <div class="intro-content">
+        <h1>THE SECOND LINE</h1>
+        <p>Where every street becomes a stage and every step tells Louisiana's story.</p>
+        <button id="enterBtn">Enter Experience</button>
+    </div>
+</div>
 
 <!-- SLIDE 1 — COVER -->
 <section class="slide cover">
@@ -364,6 +372,12 @@
   <div class="closing-rule"></div>
   <div class="closing-title">The Second Line<br>A Luminary Project</div>
 </section>
+<audio id="bgMusic" loop>
+    <source src="assets/music/2nd Line.mp3" type="audio/mpeg">
+</audio>
 
+<button id="soundToggle">🔊</button>
+
+<script src="assets/js/luminary.js"></script>
 </body>
 </html>
