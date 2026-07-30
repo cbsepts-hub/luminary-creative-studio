@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Plan Baton Rouge III: Belief Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #0a0a0a; color: #f5f0e8; font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+
+  .slide { position: relative; width: 100%; min-height: 100vh; display: flex; align-items: flex-end; overflow: hidden; }
+  .slide-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.03); transition: transform 8s ease; }
+  .slide:hover .slide-bg { transform: scale(1.0); }
+  .overlay-bottom { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.5) 35%, rgba(5,5,5,0.1) 60%, transparent 100%); }
+
+  .slide-content { position: relative; z-index: 5; padding: 80px; max-width: 640px; }
+
+  .headline { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 40px; line-height: 1.15; color: #f5f0e8; margin-bottom: 20px; }
+  .headline em { font-style: italic; font-weight: 700; }
+  .body-copy { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 20px; line-height: 1.6; color: rgba(240,235,224,0.85); margin-bottom: 18px; }
+
+  .gold-rule { width: 60px; height: 1px; background: #c9a96e; margin: 36px auto; }
+
+  .dark-slide { background: #080808; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+  .dark-slide-inner { max-width: 680px; padding: 60px; }
+  .chapter-label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #c9a96e; margin-bottom: 22px; }
+
+  .cover { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #050505; }
+  .cover .slide-content { max-width: 720px; padding: 100px; text-align: center; }
+  .cover-sub { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: #c9a96e; margin-bottom: 20px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 58px; line-height: 1.1; color: #f5f0e8; margin-bottom: 26px; }
+  .cover-opener { font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; line-height: 1.5; color: rgba(240,235,224,0.85); border-left: 2px solid #c9a96e; padding-left: 22px; text-align: left; display: inline-block; }
+
+  .closing { background: #050505; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .closing-inner { max-width: 640px; padding: 60px; }
+  .closing-main { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 32px; line-height: 1.5; color: #f5f0e8; margin-bottom: 40px; }
+  .closing-rule { width: 1px; height: 60px; background: #c9a96e; margin: 0 auto 30px; }
+  .closing-title { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #c9a96e; line-height: 2; }
+
+  .meter-row { text-align: left; margin-bottom: 24px; }
+  .meter-label { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .meter-label span.rating { color: #c9a96e; letter-spacing: 0.14em; }
+  .meter-track { width: 100%; height: 4px; background: rgba(240,235,224,0.12); margin-bottom: 8px; }
+  .meter-fill { height: 100%; background: #c9a96e; }
+  .meter-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: rgba(240,235,224,0.70); }
+
+  .findings-list { text-align: left; }
+  .finding { margin-bottom: 22px; }
+  .finding-num { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; color: #c9a96e; margin-bottom: 6px; }
+
+  @media (max-width: 768px) {
+    .cover-title { font-size: 36px; }
+    .headline { font-size: 26px; }
+    .slide-content { padding: 40px; }
+    .cover .slide-content { padding: 50px 30px; }
+    .dark-slide-inner { padding: 40px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="slide cover">
+  <div class="slide-content">
+    <div class="cover-sub">Belief Audit</div>
+    <div class="cover-title">Plan Baton Rouge III</div>
+    <div class="cover-opener">Government approved this plan faster than the public came to believe in it.</div>
+  </div>
+</section>
+
+<!-- DARK: The Belief Layer -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">The Belief Layer</div>
+    <div class="headline">A Master Plan Is Not Yet a Shared Future</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">Plan Baton Rouge III has done the hardest institutional work already. It moved through community charrettes, a year of data gathering, and a unanimous Planning Commission vote. But institutional belief and public belief are not the same asset. The people who now have to say yes, the property owners near the riverfront, the future residents, the small businesses downtown, are being asked to believe in a document most of them have never read.</p>
+  </div>
+</section>
+
+<!-- DARK: Executive Summary -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Executive Summary</div>
+    <div class="headline">The Plan Is Ahead of the People It Depends On</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">Plan Baton Rouge III has government belief. It does not yet have public belief in equal measure. The gap shows up in a specific place: property owners near the proposed youth sports and entertainment complex spoke against the plan at the Planning Commission hearing, believing it would rezone their land, while the Planning Director says it does not. That disagreement is a communication failure, not a policy one. A plan that took a year and thousands of community voices to build has not yet explained its own mechanics clearly enough to the handful of owners it affects most directly. Left unaddressed, that same pattern will repeat at every site the plan touches next.</p>
+  </div>
+</section>
+
+<!-- DARK: Current Communication Assessment -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Current Communication Assessment</div>
+    <div class="headline">Strong Announcement. Thin Ongoing Presence.</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">The plan's public footprint is concentrated in a single moment: the May 7 unveiling, a press release, and a downloadable report. Coverage from The Advocate, WBRZ, and WAFB carried the plan's numbers accurately and favorably. Beyond that moment, planbatonrouge.com functions mainly as an events archive from the engagement year rather than a living home for the plan itself. There is no visible public explainer of what the plan does and does not change for property owners, no dated implementation timeline beyond the next hearing, and no resident or business voice in the public materials that isn't a foundation executive, a commissioner, or a consultant.</p>
+  </div>
+</section>
+
+<!-- DARK: Belief Gap Analysis -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Belief Gap Analysis</div>
+    <div class="headline">Where Belief Holds. Where It Breaks.</div>
+    <div class="gold-rule"></div>
+
+    <div class="meter-row">
+      <div class="meter-label">Trust <span class="rating">Developing</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:52%;"></div></div>
+      <p class="meter-note">The Planning Director says the plan does not rezone the riverfront properties in question. A property owner's attorney told the Planning Commission he believes it does. That is a trust gap, not a disagreement over the plan's merits.</p>
+    </div>
+    <div class="meter-row">
+      <div class="meter-label">Excitement <span class="rating">Developing</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:50%;"></div></div>
+      <p class="meter-note">The riverfront amphitheater, the Riverwalk Loop, and the Lafayette Street transformation are vivid ideas. They live in press coverage and trade write-ups, not on the plan's own site, where a visitor would need to open an 80-recommendation report to find them.</p>
+    </div>
+    <div class="meter-row">
+      <div class="meter-label">Confidence <span class="rating">Strong</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:88%;"></div></div>
+      <p class="meter-note">Unanimous Planning Commission approval, a quantified case of $1.5 billion in early investment and roughly $37 million in new tax revenue, and a direct line to the $3 billion driven by Plan Baton Rouge I and II make this plan look like it is actually happening.</p>
+    </div>
+    <div class="meter-row">
+      <div class="meter-label">Anticipation <span class="rating">Developing</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:45%;"></div></div>
+      <p class="meter-note">The public knows the plan has cleared the Metro Council. Almost no one outside the process knows which of the 80 recommendations moves first, or when the youth complex site funding gets introduced to the floor.</p>
+    </div>
+    <div class="meter-row">
+      <div class="meter-label">Emotional Investment <span class="rating">Missing</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:16%;"></div></div>
+      <p class="meter-note">Every quote in the public record so far belongs to someone already in the room: a foundation officer, a commissioner, a consultant. No resident, downtown business owner, or future tenant has been given a voice in the plan's own materials.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DARK: Strengths and Opportunities -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Strengths and Opportunities</div>
+    <div class="headline">The Plan Has a Track Record Most Downtown Plans Never Get</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">Plan Baton Rouge III is not asking anyone to believe in a first attempt. It is the third chapter of a story that already delivered the Shaw Center and the Downtown Greenway, and already moved $3 billion in public and philanthropic investment through its first two versions. That history is the single most persuasive asset the plan has, and right now it is used only as a talking point in interviews rather than as the backbone of the plan's public case. A year of genuine community input, thousands of survey responses, and a unanimous first approval vote all give this plan more legitimacy than most economic development initiatives arrive with. The raw material for belief already exists. It has not yet been organized into a story.</p>
+  </div>
+</section>
+
+<!-- DARK: Priority Recommendations -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Priority Recommendations</div>
+    <div class="headline">Fix the Trust Gap Before It Reaches the Next Site Vote</div>
+    <div class="gold-rule"></div>
+    <div class="findings-list">
+      <div class="finding">
+        <div class="finding-num">01</div>
+        <p class="body-copy">Property owners near the proposed youth complex believe the plan rezones their land. That belief carried into the adoption vote unresolved. Publish a direct, plain-language explainer of what Plan Baton Rouge III legally changes and does not change for property owners in that area now, before the youth complex site funding comes to the floor as its own line item.</p>
+      </div>
+      <div class="finding">
+        <div class="finding-num">02</div>
+        <p class="body-copy">The plan's public site reads like an archive of a finished engagement period. Rebuild planbatonrouge.com as a live implementation tracker, so belief has somewhere to live between now and the first shovel in the ground.</p>
+      </div>
+      <div class="finding">
+        <div class="finding-num">03</div>
+        <p class="body-copy">Every public voice behind the plan currently works for the plan. Bring in a downtown resident, a small business owner, and a future riverfront neighbor as named voices in the plan's own materials, not only as anonymous survey respondents.</p>
+      </div>
+      <div class="finding">
+        <div class="finding-num">04</div>
+        <p class="body-copy">The public can name the next vote but not the next decade. Publish a phased, dated sequence for the 80 recommendations, so anyone outside the process can answer the question "what happens first" without reading the full report.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK: Strategic Next Steps -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Strategic Next Steps</div>
+    <div class="headline">Belief Now, Site-Specific Communication Next</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">Address the rezoning trust gap before the youth complex site funding comes before Metro Council as its own line item. That is the most urgent, most fixable item on this list, and the one with a real deadline attached to it. Now that the plan has cleared formal adoption into FuturEBR, its communication needs will split by audience: financing conversations for the riverfront park and entertainment district, leasing conversations for new housing and retail, and neighborhood-level conversations for each of the five sites of interest still being identified. At that point, a Development Communication Audit is the right next instrument, built site by site rather than plan-wide. A short public-facing film built around the Riverwalk Loop and the return of the riverfront as the city's front porch would also give this plan an emotional entry point it currently lacks entirely.</p>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="closing-inner">
+    <p class="closing-main">"A master plan becomes a place only after the people living beside it believe it is happening with them, not to them."</p>
+    <div class="closing-rule"></div>
+    <div class="closing-title">Plan Baton Rouge III Belief Audit<br>Luminary</div>
+  </div>
+</section>
+
+</body>
+</html>
