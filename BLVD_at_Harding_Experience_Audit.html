@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The BLVD at Harding: Experience Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #0a0a0a; color: #f5f0e8; font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+
+  .slide { position: relative; width: 100%; min-height: 100vh; display: flex; align-items: flex-end; overflow: hidden; }
+  .slide-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.03); transition: transform 8s ease; }
+  .slide:hover .slide-bg { transform: scale(1.0); }
+  .overlay-bottom { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.5) 35%, rgba(5,5,5,0.1) 60%, transparent 100%); }
+  .overlay-left { position: absolute; inset: 0; background: linear-gradient(to right, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.4) 45%, transparent 75%); }
+
+  .slide-content { position: relative; z-index: 5; padding: 80px; max-width: 640px; }
+  .slide-content.center { margin: 0 auto; text-align: center; padding-bottom: 120px; }
+
+  .eyebrow { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #c9a96e; margin-bottom: 18px; }
+  .headline { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 40px; line-height: 1.15; color: #f5f0e8; margin-bottom: 20px; }
+  .headline em { font-style: italic; font-weight: 700; }
+  .body-copy { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 20px; line-height: 1.6; color: rgba(240,235,224,0.85); margin-bottom: 18px; }
+  .caption { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: rgba(240,235,224,0.70); }
+
+  .gold-rule { width: 60px; height: 1px; background: #c9a96e; margin: 36px auto; }
+
+  .dark-slide { background: #080808; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+  .dark-slide-inner { max-width: 640px; padding: 60px; }
+  .chapter-label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #c9a96e; margin-bottom: 22px; }
+
+  .cover .slide-content { max-width: 720px; padding: 100px; }
+  .cover-sub { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: #c9a96e; margin-bottom: 20px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 60px; line-height: 1.1; color: #f5f0e8; margin-bottom: 26px; }
+  .cover-title em { font-style: italic; }
+  .cover-opener { font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; line-height: 1.5; color: rgba(240,235,224,0.85); border-left: 2px solid #c9a96e; padding-left: 22px; }
+
+  .closing { background: #050505; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .closing-inner { max-width: 640px; padding: 60px; }
+  .closing-main { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 32px; line-height: 1.5; color: #f5f0e8; margin-bottom: 40px; }
+  .closing-rule { width: 1px; height: 60px; background: #c9a96e; margin: 0 auto 30px; }
+  .closing-title { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #c9a96e; line-height: 2; }
+
+  .meter-row { text-align: left; margin-bottom: 24px; }
+  .meter-label { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .meter-label span.rating { color: #c9a96e; letter-spacing: 0.14em; }
+  .meter-track { width: 100%; height: 4px; background: rgba(240,235,224,0.12); margin-bottom: 8px; }
+  .meter-fill { height: 100%; background: #c9a96e; }
+  .meter-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: rgba(240,235,224,0.70); }
+
+  @media (max-width: 768px) {
+    .cover-title { font-size: 38px; }
+    .headline { font-size: 28px; }
+    .slide-content { padding: 40px; }
+    .cover .slide-content { padding: 50px 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="slide cover" style="background:#0a0a0a; align-items:center; justify-content:center;">
+  <div class="slide-content center">
+    <div class="cover-sub">Experience Audit</div>
+    <div class="cover-title">The BLVD at Harding</div>
+    <div class="cover-opener">Construction is ahead of belief. The building is rising on schedule. The story of what it will feel like to walk in still hasn't been told, and right now, other people are telling it instead.</div>
+  </div>
+</section>
+
+<!-- DARK: The Belief Layer -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">The Belief Layer</div>
+    <div class="headline">Ground Has Broken. Belief Hasn't Caught Up.</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">A shovel in the dirt proves a project is real to the people standing there. It does not prove the project is real to the tens of thousands of North Baton Rouge residents who read about an $18 million funding veto weeks later and heard nothing further from the development itself. The BLVD at Harding has physical momentum. What it does not yet have is a communication system built to carry that momentum through disruption, funding setbacks included.</p>
+  </div>
+</section>
+
+<!-- DARK: Executive Summary -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Executive Summary</div>
+    <div class="headline">The Silence After the Veto Is the Finding</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">The BLVD at Harding earned genuine public excitement before a single wall went up. Residents wrote to their newspaper calling the grocery store's arrival hard earned and long overdue. Then the Governor vetoed the state capital outlay funding and the special taxing district built to help finance the project, and the development's own communication channels went quiet at the exact moment people needed to hear from them most. A political commentary outlet filled that silence with a competing frame, describing the funding as an unaccountable subsidy rather than a community's answer to a fifty year wait. The people who need to believe in this project already want to. The gap is that nobody is hearing from The BLVD at Harding itself about what the veto changes, what survives it, and when the doors open.</p>
+  </div>
+</section>
+
+<!-- DARK: Current Communication Assessment -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Current Communication Assessment</div>
+    <div class="headline">A Leasing Brochure Standing In for a Community's Story</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">The project's website speaks in the register of commercial real estate: essential services, ground floor retail, convenient access. That language is accurate, and it is also the wrong register for a project whose real story is a decades long absence of a full service grocer north of Airline Highway. The site's social links point to its website builder's own placeholder accounts rather than the project's real channels, and the page reserved for news and press sits empty. At the moment residents are actively searching for word on what the funding veto means for the project, the pages built to answer them lead nowhere.</p>
+  </div>
+</section>
+
+<!-- DARK: Belief Gap Analysis -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Belief Gap Analysis</div>
+    <div class="headline">Where Belief Holds. Where It Breaks.</div>
+    <div class="gold-rule"></div>
+
+    <div class="meter-row">
+      <div class="meter-label">Trust <span class="rating">DEVELOPING</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:50%;"></div></div>
+      <p class="meter-note">The materials read as sincere. But the site has not addressed the one story now defining the project's public perception, and unaddressed news reads as something to hide.</p>
+    </div>
+    <div class="meter-row">
+      <div class="meter-label">Excitement <span class="rating">DEVELOPING</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:55%;"></div></div>
+      <p class="meter-note">Real excitement exists and is documented in reader letters and local coverage. The project's own communication hasn't matched that register; it lists amenities rather than naming the wait that made them matter.</p>
+    </div>
+    <div class="meter-row">
+      <div class="meter-label">Confidence <span class="rating">DEVELOPING</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:48%;"></div></div>
+      <p class="meter-note">Unanimous zoning approval and a groundbreaking attended by the Governor are strong signals of confidence. A blank press page and dead social links undercut them at the worst possible moment to look uncertain.</p>
+    </div>
+    <div class="meter-row">
+      <div class="meter-label">Anticipation <span class="rating">MISSING</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:15%;"></div></div>
+      <p class="meter-note">No opening date, construction timeline, or milestone tracker appears anywhere on the project's own site. The fall 2027 target exists only in state legislative reporting, never from the development itself.</p>
+    </div>
+    <div class="meter-row">
+      <div class="meter-label">Emotional Investment <span class="rating">DEVELOPING</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:60%;"></div></div>
+      <p class="meter-note">Proximity to Southern University and the end of a long standing food desert are the most powerful parts of this story. On the project's site, they appear as a feature in a list, not as the reason the project exists.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DARK: Strengths and Opportunities -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Strengths and Opportunities</div>
+    <div class="headline">The Hard Part Is Already Done</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">Physical progress here is not a claim, it is a public record: unanimous planning and zoning approval, a groundbreaking attended by the Governor, a Congressman, and the state senator who carried the funding bill, and an anchor grocer choosing Harding Boulevard for its very first location. A community voting feature already invites resident input on future tenants, proof the development group understands that engagement matters. The opportunity here is narrower than most audits find. This project does not need to build belief from nothing. It needs to stop leaving belief to be built in channels it doesn't control.</p>
+  </div>
+</section>
+
+<!-- DARK: Priority Recommendations -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Priority Recommendations</div>
+    <div class="headline">Speak First, Before the Story Speaks for Itself</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">Publish a direct, plain language statement on what the funding veto changes and what it does not, before another outlet frames it first. Reconnect the site's social links and news page to real, active channels. Replace the amenities list with the wait Scotlandville and Southern University residents have carried, and what ends when the doors open. Put a visible construction timeline on the site itself, so the fall 2027 target comes from the people building it, not from a bill tracker.</p>
+  </div>
+</section>
+
+<!-- DARK: Strategic Next Steps -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">Strategic Next Steps</div>
+    <div class="headline">The Next Sixty Days</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">In the next two weeks: publish the funding update and repair the site's dead links. Within thirty days: replace the homepage's feature list with a page built around the walk from Southern University's campus to the store. Within sixty days: put a construction milestone tracker live, so every future piece of news, welcome or unwelcome, lands first on a channel the project already owns instead of one it has to react to.</p>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="closing-inner">
+    <p class="closing-main">"A grocery store this close to Southern University was never just about groceries. It was about whether North Baton Rouge would have to wait one more year. The building will answer that question eventually. The website should be answering it now."</p>
+    <div class="closing-rule"></div>
+    <div class="closing-title">The BLVD at Harding Experience Audit<br>Luminary</div>
+  </div>
+</section>
+
+</body>
+</html>
