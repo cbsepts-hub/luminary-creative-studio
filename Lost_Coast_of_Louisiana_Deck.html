@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="assets/css/luminary.css">
 <meta charset="UTF-8">
 <title>The Lost Coast of Louisiana</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +54,14 @@ h1 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 52px; 
 .slidenum { position: absolute; top: 24px; right: 32px; z-index: 3; font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 2px; color: rgba(245,240,232,0.55); }
 </style>
 </head>
-<body>
+<body><div id="intro">
+    <div class="intro-content">
+        <h1>THE LOST COAST OF LOUISIANA</h1>
+        <p>A disappearing landscape. An enduring spirit.</p>
+        <button id="enterBtn">Enter Experience</button>
+    </div>
+</div>
+
 <div class="deck">
 
 <section class="slide" id="s1">
@@ -165,5 +173,12 @@ h1 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 52px; 
   </div>
 </section>
 </div>
+<audio id="bgMusic" loop>
+    <source src="assets/music/LA Blues.mp3" type="audio/mpeg">
+</audio>
+
+<button id="soundToggle">🔊</button>
+
+<script src="assets/js/luminary.js"></script>
 </body>
 </html>
