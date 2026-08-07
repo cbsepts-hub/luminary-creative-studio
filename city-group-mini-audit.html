@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City Group Hospitality: Teaser Audit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background: #0a0a0a; color: #f5f0e8; font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+
+        .dark-slide {
+            background: #080808;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+        }
+        .dark-slide-inner { max-width: 640px; padding: 60px; }
+
+        .chapter-label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #c9a96e; margin-bottom: 22px; }
+        .headline { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 40px; line-height: 1.15; color: #f5f0e8; margin-bottom: 20px; }
+        .headline em { font-style: italic; font-weight: 700; }
+        .body-copy { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 20px; line-height: 1.6; color: rgba(240,235,224,0.85); margin-bottom: 18px; }
+        .gold-rule { width: 60px; height: 1px; background: #c9a96e; margin: 36px auto; }
+
+        /* Belief meter components */
+        .meter-row { text-align: left; margin-bottom: 24px; }
+        .meter-label { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 8px; display: flex; justify-content: space-between; }
+        .meter-label span.rating { color: #c9a96e; letter-spacing: 0.14em; }
+        .meter-track { width: 100%; height: 4px; background: rgba(240,235,224,0.12); margin-bottom: 8px; }
+        .meter-fill { height: 100%; background: #c9a96e; }
+        .meter-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: rgba(240,235,224,0.70); }
+
+        .closing { background: #050505; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .closing-inner { max-width: 640px; padding: 60px; }
+        .closing-main { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 30px; line-height: 1.5; color: #f5f0e8; margin-bottom: 40px; }
+        .closing-rule { width: 1px; height: 60px; background: #c9a96e; margin: 0 auto 30px; }
+        .closing-title { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #c9a96e; line-height: 2; }
+
+        @media (max-width: 768px) {
+            .headline { font-size: 28px; }
+            .dark-slide-inner { padding: 40px 20px; }
+            .closing-main { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: THE CORE GAP -->
+    <section class="dark-slide">
+        <div class="dark-slide-inner">
+            <div class="chapter-label">Teaser Audit Overview</div>
+            <div class="headline">City Group Hospitality</div>
+            <div class="gold-rule"></div>
+            <p class="body-copy">Your leadership talks about a culture built on the nobility of service, spread across eleven operations from fine dining to school cafeterias. None of that story lives on citygrouphospitality.com, where the homepage never names a single one of your restaurants.</p>
+        </div>
+    </section>
+
+    <!-- SLIDE 2: THE FIVE LEVER SCORING -->
+    <section class="dark-slide">
+        <div class="dark-slide-inner">
+            <div class="chapter-label">Belief Gap Analysis</div>
+            <div class="headline">Where Belief Holds. Where It Breaks.</div>
+            <div class="gold-rule"></div>
+
+            <div class="meter-row">
+                <div class="meter-label">Trust <span class="rating">Developing</span></div>
+                <div class="meter-track"><div class="meter-fill" style="width: 55%;"></div></div>
+                <p class="meter-note">The homepage asks visitors to "trust in the consistency" of City Group restaurants without pointing to a single restaurant, dish, or story that earns it.</p>
+            </div>
+
+            <div class="meter-row">
+                <div class="meter-label">Excitement <span class="rating">Missing</span></div>
+                <div class="meter-track"><div class="meter-fill" style="width: 20%;"></div></div>
+                <p class="meter-note">Rouj Creole, City Pork, Spoke & Hub, Proverbial Wine Bistro, Beausoleil, City Slice: none of these concepts appear by name on the homepage a first time visitor lands on.</p>
+            </div>
+
+            <div class="meter-row">
+                <div class="meter-label">Confidence <span class="rating">Strong</span></div>
+                <div class="meter-track"><div class="meter-fill" style="width: 90%;"></div></div>
+                <p class="meter-note">Eleven operations open and running, with new concepts like Proverbial Wine Bistro and Spoke & Hub launching within the last two years. The growth is real and visible on the ground.</p>
+            </div>
+
+            <div class="meter-row">
+                <div class="meter-label">Anticipation <span class="rating">Developing</span></div>
+                <div class="meter-track"><div class="meter-fill" style="width: 25%;"></div></div>
+                <p class="meter-note">The News page exists, but the most recent post is at least three years old. Concepts that opened since then, including Spoke & Hub and Proverbial Wine Bistro, have no news presence on the site at all.</p>
+            </div>
+
+            <div class="meter-row">
+                <div class="meter-label">Emotional Investment <span class="rating">Missing</span></div>
+                <div class="meter-track"><div class="meter-fill" style="width: 10%;"></div></div>
+                <p class="meter-note">COO Stephen Hightower and CEO Patrick Valluzzo have told the story of a company built on hospitality and belief in your people, but only in a local business magazine. That story never made it to your own site.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: RECOMMENDATION & NEXT STEP -->
+    <section class="dark-slide">
+        <div class="dark-slide-inner">
+            <div class="chapter-label">Priority Recommendation</div>
+            <div class="headline">You Already Have the Story. It's Not on Your Site.</div>
+            <div class="gold-rule"></div>
+            <p class="body-copy">The words your own leadership uses to describe City Group already exist, they just live in someone else's publication instead of yours. The fix isn't inventing a new story. It's moving the one you're already telling, in interviews and in person, onto the homepage your guests actually visit.</p>
+            <p class="body-copy" style="font-size: 16px; margin-top: 40px; color: #c9a96e; font-family: 'Montserrat', sans-serif; letter-spacing: 0.1em; text-transform: uppercase;">Next Step: Contact us for the full audit and offer sheet</p>
+        </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="closing">
+        <div class="closing-inner">
+            <p class="closing-main">"Eleven restaurants can share a kitchen philosophy without sharing a single sentence online. That's the gap worth closing first."</p>
+            <div class="closing-rule"></div>
+            <div class="closing-title">City Group Hospitality Teaser Audit<br>Lumminary</div>
+        </div>
+    </section>
+
+</body>
+</html>

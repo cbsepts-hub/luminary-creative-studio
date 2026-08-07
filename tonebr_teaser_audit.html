@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ToneBR: A Narrative Observation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #0a0a0a; color: #f5f0e8; font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+
+  .slide-content { position: relative; z-index: 5; padding: 80px; max-width: 640px; }
+  .headline { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 38px; line-height: 1.15; color: #f5f0e8; margin-bottom: 20px; }
+  .body-copy { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 20px; line-height: 1.6; color: rgba(240,235,224,0.85); margin-bottom: 18px; }
+  .gold-rule { width: 60px; height: 1px; background: #c9a96e; margin: 36px auto; }
+
+  .dark-slide { background: #080808; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+  .dark-slide-inner { max-width: 640px; padding: 60px; text-align: left; }
+  .chapter-label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #c9a96e; margin-bottom: 22px; text-align: center; }
+  .dark-slide-inner .headline { text-align: center; }
+  .dark-slide-inner .gold-rule { margin: 36px auto; }
+
+  .cover { align-items: center; justify-content: center; background: #050505; min-height: 100vh; display: flex; }
+  .cover .slide-content { max-width: 720px; padding: 100px; text-align: center; margin: 0 auto; }
+  .cover-sub { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: #c9a96e; margin-bottom: 20px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 54px; line-height: 1.1; color: #f5f0e8; margin-bottom: 26px; }
+  .cover-opener { font-family: 'Playfair Display', serif; font-style: italic; font-size: 21px; line-height: 1.5; color: rgba(240,235,224,0.85); border-left: 2px solid #c9a96e; padding-left: 22px; text-align: left; display: inline-block; }
+
+  .quote-slide { background: #0c0c0c; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .quote-inner { max-width: 600px; padding: 60px; }
+  .quote-tag { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(201,169,110,0.7); margin-bottom: 18px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 28px; line-height: 1.5; color: #f5f0e8; }
+  .quote-source { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: rgba(240,235,224,0.55); margin-top: 24px; }
+
+  .meter-row { text-align: left; margin-bottom: 24px; }
+  .meter-label { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .meter-label span.rating { color: #c9a96e; letter-spacing: 0.14em; }
+  .meter-track { width: 100%; height: 4px; background: rgba(240,235,224,0.12); margin-bottom: 8px; }
+  .meter-fill { height: 100%; background: #c9a96e; }
+  .meter-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: rgba(240,235,224,0.70); }
+
+  .lock-note { font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(201,169,110,0.6); text-align: center; margin-top: 30px; border-top: 1px solid rgba(201,169,110,0.25); padding-top: 20px; }
+
+  .closing { background: #050505; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .closing-inner { max-width: 600px; padding: 60px; }
+  .closing-main { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 29px; line-height: 1.5; color: #f5f0e8; margin-bottom: 34px; }
+  .closing-cta { font-family: 'Cormorant Garamond', serif; font-size: 20px; line-height: 1.6; color: rgba(240,235,224,0.85); margin-bottom: 34px; }
+  .closing-rule { width: 1px; height: 60px; background: #c9a96e; margin: 0 auto 30px; }
+  .closing-title { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #c9a96e; line-height: 2; }
+
+  @media (max-width: 768px) {
+    .cover-title { font-size: 32px; }
+    .headline { font-size: 25px; }
+    .slide-content { padding: 40px; }
+    .cover .slide-content { padding: 50px 30px; }
+    .dark-slide-inner { padding: 40px 28px; }
+    .quote-text { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="slide-content">
+    <div class="cover-sub">A Narrative Observation</div>
+    <div class="cover-title">ToneBR</div>
+    <div class="cover-opener">Your best line already exists. It's just on the wrong platform.</div>
+  </div>
+</section>
+
+<!-- THE FINDING -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">What I Noticed</div>
+    <div class="headline">Your Instagram bio is a better brand statement than your website.</div>
+    <div class="gold-rule"></div>
+    <p class="body-copy">Two studios, a Megaformer floor, a VersaClimber wall, 250+ classes a week, real local recognition. That's a strong business. But the front door at tonebr.com opens on a single generic sentence about a corporate merger, followed by three navigation tiles. No story, no voice, no community.</p>
+  </div>
+</section>
+
+<!-- THE QUOTE -->
+<section class="quote-slide">
+  <div class="quote-inner">
+    <div class="quote-tag">Found on Instagram, not on the site</div>
+    <div class="quote-text">"Baton Rouge's fitness community. All levels. All bodies. All in."</div>
+    <div class="quote-source">— @tonebatonrouge bio</div>
+  </div>
+</section>
+
+<!-- PARTIAL BELIEF GAP -->
+<section class="dark-slide">
+  <div class="dark-slide-inner">
+    <div class="chapter-label">A Quick Read</div>
+    <div class="headline">Two of five signals, at a glance.</div>
+    <div class="gold-rule"></div>
+
+    <div class="meter-row">
+      <div class="meter-label">Trust <span class="rating">STRONG</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:88%;"></div></div>
+      <p class="meter-note">A founder-owned local brand with real community standing. Nobody needs convincing this business is legitimate.</p>
+    </div>
+    <div class="meter-row">
+      <div class="meter-label">Emotional Investment <span class="rating">DEVELOPING</span></div>
+      <div class="meter-track"><div class="meter-fill" style="width:42%;"></div></div>
+      <p class="meter-note">The community voice exists and it's genuinely good. It just lives on a platform ToneBR doesn't own, and nowhere on the one it does.</p>
+    </div>
+
+    <div class="lock-note">3 more signals scored in the full Belief Gap Analysis</div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="closing">
+  <div class="closing-inner">
+    <p class="closing-main">"A member doesn't fall in love with a schedule. They fall in love with who they become in the room."</p>
+    <p class="closing-cta">This is a fraction of what I found. If it's useful, I'd like to walk you through the rest, and what a fix could look like.</p>
+    <div class="closing-rule"></div>
+    <div class="closing-title">ToneBR &middot; Narrative Observation<br>Luminary</div>
+  </div>
+</section>
+
+</body>
+</html>
