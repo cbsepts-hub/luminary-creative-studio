@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Belief Audit: Mid-City Lofts</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#0a0a0a;
+    color: rgba(240,235,224,0.85);
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    padding: 80px 24px;
+  }
+
+  .doc {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .doc-label {
+    font-family:'Montserrat', sans-serif;
+    font-weight:600;
+    font-size:10px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:#c9a96e;
+    margin-bottom:18px;
+  }
+
+  .doc-title {
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height:1.15;
+    color:#f5f0e8;
+    margin-bottom: 10px;
+  }
+
+  .doc-sub {
+    font-family:'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight:300;
+    font-size:18px;
+    color: rgba(240,235,224,0.55);
+    margin-bottom: 50px;
+  }
+
+  .qa-block {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(201,169,110,0.14);
+  }
+
+  .qa-block:last-of-type {
+    border-bottom: none;
+  }
+
+  .q-number {
+    font-family:'Montserrat', sans-serif;
+    font-weight:600;
+    font-size: 10px;
+    letter-spacing:0.2em;
+    color:#c9a96e;
+    margin-bottom: 8px;
+  }
+
+  .q-text {
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-style:italic;
+    font-size: clamp(20px, 2.4vw, 26px);
+    color:#f5f0e8;
+    margin-bottom: 16px;
+    line-height:1.3;
+  }
+
+  .a-text {
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(16px, 1.7vw, 19px);
+    line-height:1.75;
+    color: rgba(240,235,224,0.82);
+  }
+
+  .translation-panel {
+    background:#0d0d0d;
+    border: 1px solid rgba(201,169,110,0.22);
+    padding: 44px 40px;
+    margin: 50px 0;
+  }
+
+  .translation-label {
+    font-family:'Montserrat', sans-serif;
+    font-weight:600;
+    font-size:10px;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    color:#c9a96e;
+    margin-bottom: 28px;
+    text-align:center;
+  }
+
+  .translation-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .translation-col-label {
+    font-family:'Montserrat', sans-serif;
+    font-weight:600;
+    font-size:9px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color: rgba(240,235,224,0.45);
+    margin-bottom: 14px;
+  }
+
+  .their-version {
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size:15px;
+    line-height:1.7;
+    color: rgba(240,235,224,0.55);
+  }
+
+  .luminary-version {
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-style:italic;
+    font-size:17px;
+    line-height:1.75;
+    color:#f5f0e8;
+  }
+
+  .closing-line {
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:16px;
+    color: rgba(240,235,224,0.55);
+    text-align:center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(201,169,110,0.14);
+  }
+
+  .signoff {
+    font-family:'Montserrat', sans-serif;
+    font-weight:600;
+    font-size:10px;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    color:#c9a96e;
+    text-align:center;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 50px 20px; }
+    .translation-grid { grid-template-columns: 1fr; }
+    .translation-panel { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="doc">
+  <div class="doc-label">Belief Audit</div>
+  <div class="doc-title">Mid-City Transformation</div>
+  <div class="doc-sub">HRI Communities &middot; Lake Charles, LA</div>
+
+  <div class="qa-block">
+    <div class="q-number">01</div>
+    <div class="q-text">What is the project?</div>
+    <p class="a-text">The Mid-City Choice Neighborhoods Transformation, not just Mid-City Lofts. A $40 million HUD grant, won as a first-time applicant against sixteen other cities, funding 500 to 800 mixed-income homes and more than $200 million in investment across 38 acres over the next five to seven years. Mid-City Lofts, HRI's completed 46-unit building, is the first delivered phase. The partners are asking funders, city leadership, and Lake Charles residents to believe this isn't just another housing project, it's an entire neighborhood coming back as somewhere people choose to live, not somewhere they're placed.</p>
+  </div>
+
+  <div class="qa-block">
+    <div class="q-number">02</div>
+    <div class="q-text">What do they currently communicate?</div>
+    <p class="a-text">The Choice Neighborhoods site is genuinely thorough: the grant amount, the home count, the investment figure, sections on People, Neighborhood, and Housing, committee meeting schedules, a full row of partner logos. It's organized and credible. It also reads like a program summary. Goals, numbers, partners, phases.</p>
+  </div>
+
+  <div class="qa-block">
+    <div class="q-number">03</div>
+    <div class="q-text">Where is the belief gap?</div>
+    <p class="a-text">Nowhere in that material do you get a sense of what the neighborhood will actually feel like once it's built, walking to the kayak launch, seeing a park where the old public housing used to be, running into a neighbor at a new corner store. The site explains the machinery of the transformation in real detail. It doesn't let anyone experience the outcome before it exists.</p>
+  </div>
+
+  <div class="qa-block">
+    <div class="q-number">04</div>
+    <div class="q-text">Who needs to believe it?</div>
+    <p class="a-text">Future residents and displaced former Lloyd Oaks residents deciding whether this is really home. HUD and philanthropic partners deciding whether to keep investing over the next five to seven years. And Lake Charles residents broadly, who need to see this as an actual neighborhood coming back, not a recovery statistic.</p>
+  </div>
+
+  <div class="qa-block">
+    <div class="q-number">05</div>
+    <div class="q-text">What would close the gap?</div>
+    <p class="a-text">Not more program detail, there's already plenty of that. One piece of writing that lets someone picture an ordinary day in the finished neighborhood: what it's actually like to live there once the parks, the retail, and the 500-plus homes are real, not just funded.</p>
+  </div>
+
+  <div class="translation-panel">
+    <div class="translation-label">One Translation</div>
+    <div class="translation-grid">
+      <div>
+        <div class="translation-col-label">Their Version</div>
+        <p class="their-version">The Mid-City Neighborhood Transformation creates 500 to 800 mixed-income homes and brings more than $200 million of investment into the neighborhood over five to seven years, including new parks, retail, and community amenities.</p>
+      </div>
+      <div>
+        <div class="translation-col-label">The Missing Layer</div>
+        <p class="luminary-version">It's a Saturday morning. You walk down to the kayak launch that used to be inaccessible, past a park that used to be a vacant lot, and wave at a neighbor sitting on their new porch before grabbing coffee at a corner spot that didn't exist two years ago. Nobody here is thinking about grant numbers. They're just home.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="closing-line">This is one gap, in one neighborhood. There's likely more where this came from.</p>
+  <div class="signoff">Luminary</div>
+</div>
+
+</body>
+</html>
